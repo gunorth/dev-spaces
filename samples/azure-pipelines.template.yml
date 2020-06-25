@@ -14,7 +14,7 @@ jobs:
       set -e
       set -x
       docker build -f samples/${{ parameters.language }}/getting-started/webfrontend/Dockerfile -t $(imageRepo):$(imageTag) samples/${{ parameters.language }}/getting-started/webfrontend/
-      docker login -u $(dockerId) -p $pswd $(acrUrl)
+      docker login -u $(dockerId) -p $(dockerPassword) $(acrUrl)
       docker push $(imageRepo):$(imageTag)
       docker logout $(acrUrl)
       cp -r samples/${{ parameters.language }}/getting-started/webfrontend/charts/webfrontend $(Build.ArtifactStagingDirectory)/chart

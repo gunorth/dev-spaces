@@ -1,6 +1,6 @@
 # define two variables 'dockerId' and 'dockerPassword' in the build pipeline in UI for your ACR credentials
 parameters:
-  language: '' # Overridden in each language's pipeline file
+  language: 'nodejs' # Overridden in each language's pipeline file
 jobs:
 - job: Build_webfrontend
   pool:
